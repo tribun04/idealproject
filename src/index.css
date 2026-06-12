@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: white;
+  }
+}
+
+@layer components {
+  .custom-btn {
+    @apply inline-flex items-center font-bold text-orange-500 hover:text-orange-400 transition-all duration-300;
+  }
+  
+  .hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hamburger .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+  
+  .hamburger .hamburger-inner,
+  .hamburger .hamburger-inner::before,
+  .hamburger .hamburger-inner::after {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+  
+  .hamburger .hamburger-inner::before,
+  .hamburger .hamburger-inner::after {
+    content: "";
+    display: block;
+  }
+  
+  .hamburger .hamburger-inner::before {
+    top: -8px;
+  }
+  
+  .hamburger .hamburger-inner::after {
+    bottom: -8px;
+  }
+}
+
+/* Slick slider customizations */
+.slick-slide {
+  outline: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f37028;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e05d15;
+}
+
+/* Swiper pagination customization */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f37028 !important;
+  opacity: 1 !important;
+}
